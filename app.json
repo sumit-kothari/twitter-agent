@@ -1,8 +1,9 @@
 {
   "name": "twitter-agent",
-  "description": "no need",
+  "description": "Simple Python/Flask app to communicate between api.ai(simple NLP) and Twitter api's.",
   "image": "heroku/python",
-  "repository": "null",
-  "keywords": ["python"],
-  "addons": []
+  "logo": "https://pbs.twimg.com/media/CQQuwnkUcAAkItW.png",
+  "repository": "https://github.com/nlp-stuff/twitter-agent",
+  "keywords": ["python", "flask"],
+  "addons": ["heroku-postgresql"]
 }
