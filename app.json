@@ -1,0 +1,8 @@
+{
+  "name": "twitter-agent",
+  "description": "no need",
+  "image": "heroku/python",
+  "repository": "null",
+  "keywords": ["python"],
+  "addons": []
+}
