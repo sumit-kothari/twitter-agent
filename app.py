@@ -11,11 +11,11 @@ import logging
 logging.basicConfig(filename='file.log',level=logging.DEBUG)
 
 
-CONSUMER_KEY = "<CONSUMER_KEY>"
-CONSUMER_SECRET = "<CONSUMER_SECRET>"
-ACCESS_TOKEN = "<ACCESS_TOKEN>"
-ACCESS_TOKEN_SECRET = "<ACCESS_TOKEN_SECRET>"
-APIAI_CLIENT_ACCESS_TOKEN = "<APIAI_CLIENT_ACCESS_TOKEN>"
+CONSUMER_KEY = "727bQM1xCkWAkUK71eyiLYswB"
+CONSUMER_SECRET = "f59ft7bIG8ody2nMxh2ar004EF7DoweYkJVepzh4dKCypkWyQS"
+ACCESS_TOKEN = "857144293298974722-HGxUEKWRNsLR59dYhixJ9LXQhpf7JZi"
+ACCESS_TOKEN_SECRET = "QKxSddYxYXVQ1k9PW3w9cjxnDoONaERiQXawNoS6fXhLg"
+APIAI_CLIENT_ACCESS_TOKEN = "bdc6cd0e3861458fb0cbd48f3e0988e6"
 
 
 app = Flask(__name__)
@@ -24,8 +24,10 @@ app = Flask(__name__)
 def indexRoute():
     return render_template('root.html')
 
-
+# @app.route('/test')
 def _twitterTest(username):
+
+    # username = "kdnuggets"
 
     logging.info("Twitter username requested = %s", username) 
 
@@ -35,6 +37,7 @@ def _twitterTest(username):
     api = tweepy.API(auth)
 
     tweetText = ""
+    tweetUrl = ""
 
     public_tweets = api.user_timeline(screen_name = username, count=1)
 
@@ -42,11 +45,21 @@ def _twitterTest(username):
 
     for tweet in public_tweets:
         tweetText = tweet.text
+        
+        if 'media' in tweet.entities:
+            for image in  tweet.entities['media']:
+                tweetUrl = image['media_url']
+                break
+
         logging.info("Twitter api response tweetText = %s", tweetText) 
+        logging.info("Twitter api response tweetUrl = %s", tweetUrl) 
+
+        break
 
     return {
         "status" : True,
-        "message" : tweetText
+        "message" : tweetText,
+        "imageUrl": tweetUrl
     }
 
 

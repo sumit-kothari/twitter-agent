@@ -28,9 +28,15 @@ function sendQuery(data) {
 
 			$('#myModal').modal('hide')
 
-			console.log(resultData);
-			// alert("ok"); 
-			$("#message-list").append('<li class="list-group-item list-group-item-success text-right">'+ resultData.message +'</li>');
+			var appendText = '<li class="list-group-item list-group-item-success text-right">'+ resultData.message;
+
+			if(resultData.imageUrl) {
+				appendText = appendText + '<br> <image src='+ resultData.imageUrl +' height=200 />'
+			}
+
+			appendText = appendText + '</li>'
+
+			$("#message-list").append(appendText);
 		});
 
 		data.inputQuery.value = "";
