@@ -11,11 +11,11 @@ import logging
 logging.basicConfig(filename='file.log',level=logging.DEBUG)
 
 
-CONSUMER_KEY = "727bQM1xCkWAkUK71eyiLYswB"
-CONSUMER_SECRET = "f59ft7bIG8ody2nMxh2ar004EF7DoweYkJVepzh4dKCypkWyQS"
-ACCESS_TOKEN = "857144293298974722-HGxUEKWRNsLR59dYhixJ9LXQhpf7JZi"
-ACCESS_TOKEN_SECRET = "QKxSddYxYXVQ1k9PW3w9cjxnDoONaERiQXawNoS6fXhLg"
-APIAI_CLIENT_ACCESS_TOKEN = "bdc6cd0e3861458fb0cbd48f3e0988e6"
+CONSUMER_KEY = "abc"
+CONSUMER_SECRET = "abc"
+ACCESS_TOKEN = "abc"
+ACCESS_TOKEN_SECRET = "abc"
+APIAI_CLIENT_ACCESS_TOKEN = "abc"
 
 
 app = Flask(__name__)
