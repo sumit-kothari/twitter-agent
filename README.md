@@ -8,5 +8,5 @@ Simple Python/Flask app to communicate between api.ai(simple NLP) and Twitter ap
 
   - Modify tokens in app.py file
   - Click on deploy to heroku button
-  - pip install -r requirements.txt (for local development)
+  - ```pip install -r requirements.txt``` (for local development)
 
